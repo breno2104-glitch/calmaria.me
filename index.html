@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Calmaria.me – Seu refúgio emocional diário</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --bg-main: #F4EDE3;
+      --bg-card: #FFFFFF;
+      --accent-soft: #AFC7B3;
+      --accent-soft-2: #E1C9C5;
+      --text-main: #5B5B5B;
+      --text-strong: #343434;
+      --shadow-soft: 0 12px 30px rgba(0, 0, 0, 0.06);
+      --radius-lg: 18px;
+      --radius-full: 999px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #F4EDE3 0, #EDE3D8 40%, #F4EDE3 100%);
+      color: var(--text-main);
+      line-height: 1.5;
+    }
+
+    .page {
+      max-width: 1120px;
+      padding: 24px 16px 48px;
+      margin: 0 auto;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 32px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-mark {
+      width: 32px;
+      height: 32px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #AFC7B3, #C2D3D9);
+      box-shadow: var(--shadow-soft);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      color: #fff;
+      font-weight: 600;
+    }
+
+    .logo-text-top {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--text-strong);
+    }
+
+    .logo-text-bottom {
+      font-size: 11px;
+      color: #8A8680;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    nav {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      font-size: 14px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--text-main);
+      padding: 6px 10px;
+      border-radius: 999px;
+    }
+
+    nav a:hover {
+      background: rgba(0, 0, 0, 0.03);
+    }
+
+    .btn-outline {
+      border: 1px solid rgba(0,0,0,0.12);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #AFC7B3, #E1C9C5);
+      border-radius: var(--radius-full);
+      padding: 8px 16px;
+      color: #fff;
+      font-weight: 500;
+      border: none;
+      cursor: pointer;
+      box-shadow: var(--shadow-soft);
+      font-size: 14px;
+    }
+
+    .btn-primary:hover {
+      filter: brightness(1.02);
+      transform: translateY(-0.5px);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+      gap: 24px;
+      align-items: center;
+      margin-bottom: 32px;
+    }
+
+    @media (max-width: 800px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+      }
+      nav {
+        width: 100%;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+      }
+    }
+
+    .hero-kicker {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #8A8680;
+      margin-bottom: 10px;
+    }
+
+    .hero-title {
+      font-size: clamp(28px, 4vw, 36px);
+      color: var(--text-strong);
+      margin-bottom: 12px;
+    }
+
+    .hero-subtitle {
+      font-size: 15px;
+      color: #746F68;
+      margin-bottom: 20px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .btn-emergency {
+      background: #AFC7B3;
+      border-radius: var(--radius-full);
+      padding: 12px 20px;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      font-size: 15px;
+      font-weight: 600;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .btn-emergency span {
+      font-size: 20px;
+      margin-right: 4px;
+    }
+
+    .btn-secondary {
+      padding: 11px 16px;
+      border-radius: var(--radius-full);
+      border: 1px solid rgba(0,0,0,0.08);
+      background: rgba(255,255,255,0.7);
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .hero-meta {
+      font-size: 12px;
+      color: #9A958F;
+    }
+
+    .hero-meta strong {
+      color: #6D685F;
+    }
+
+    .hero-card {
+      background: rgba(255,255,255,0.86);
+      border-radius: 24px;
+      padding: 20px 18px;
+      box-shadow: var(--shadow-soft);
+      backdrop-filter: blur(12px);
+    }
+
+    .hero-card-title {
+      font-size: 14px;
+      color: #7B756E;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #F5EFE8;
+      border-radius: 999px;
+      padding: 4px 10px;
+      font-size: 11px;
+      color: #8F867E;
+      margin-bottom: 12px;
+    }
+
+    .pill-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #AFC7B3;
+    }
+
+    .mood-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+
+    @media (max-width: 600px) {
+      .mood-grid {
+        grid-template-columns: repeat(2, minmax(0,1fr));
+      }
+    }
+
+    .mood-btn {
+      border-radius: 14px;
+      border: 1px solid #EFE3D8;
+      background: #FDF8F2;
+      padding: 8px 6px;
+      text-align: center;
+      font-size: 11px;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .mood-btn span {
+      font-size: 18px;
+    }
+
+    .mood-btn strong {
+      font-size: 11px;
+      color: #6D675E;
+    }
+
+    .card-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 11px;
+      color: #9A958F;
+      margin-top: 6px;
+    }
+
+    .progress-bar {
+      width: 80px;
+      height: 6px;
+      border-radius: 999px;
+      background: #F0E4DA;
+      overflow: hidden;
+    }
+
+    .progress-inner {
+      width: 48%;
+      height: 100%;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #AFC7B3, #E1C9C5);
+    }
+
+    .sections {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 32px;
+    }
+
+    @media (max-width: 900px) {
+      .sections {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .section-card {
+      background: rgba(255,255,255,0.88);
+      border-radius: var(--radius-lg);
+      padding: 16px 16px 18px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .section-title {
+      font-size: 15px;
+      color: var(--text-strong);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .section-tag {
+      font-size: 11px;
+      color: #9A958F;
+      margin-bottom: 10px;
+    }
+
+    .section-list {
+      list-style: none;
+      font-size: 13px;
+      color: #6F685F;
+    }
+
+    .section-list li {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 6px;
+    }
+
+    .section-list li::before {
+      content: "•";
+      font-size: 14px;
+      color: #AFC7B3;
+      margin-top: 1px;
+    }
+
+    .pill-small {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 9px;
+      border-radius: 999px;
+      font-size: 11px;
+      border: 1px solid rgba(0,0,0,0.06);
+      margin-top: 8px;
+      color: #7B756E;
+      background: #F9F3EC;
+    }
+
+    footer {
+      margin-top: 36px;
+      font-size: 11px;
+      color: #9A958F;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="logo">
+        <div class="logo-mark">C</div>
+        <div>
+          <div class="logo-text-top">Calmaria.me</div>
+          <div class="logo-text-bottom">refúgio emocional diário</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#" class="btn-outline">Como funciona</a>
+        <a href="#" class="btn-outline">Benefícios</a>
+        <a href="#" class="btn-outline">Planos</a>
+        <button class="btn-primary">Entrar / Criar conta</button>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div>
+          <div class="hero-kicker">Saúde emocional acessível</div>
+          <h1 class="hero-title">Respira. Você está em Calmaria agora.</h1>
+          <p class="hero-subtitle">
+            Um espaço seguro e acolhedor para você aliviar o estresse, organizar as emoções
+            e lembrar que não precisa dar conta de tudo sozinho.
+          </p>
+          <div class="hero-actions">
+            <button class="btn-emergency">
+              <span>🕊️</span> Preciso de calma agora
+            </button>
+            <button class="btn-secondary">
+              Explorar exercícios de 1 minuto
+            </button>
+          </div>
+          <p class="hero-meta">
+            Já ajudamos <strong>+3.200 pessoas</strong> a diminuírem o estresse do dia a dia com
+            práticas simples, gentis e realistas.
+          </p>
+        </div>
+
+        <aside class="hero-card" aria-label="Painel rápido do seu estado emocional">
+          <div class="pill">
+            <div class="pill-dot"></div>
+            Seu check-in de hoje
+          </div>
+          <div class="hero-card-title">
+            Como você está se sentindo agora?
+          </div>
+
+          <div class="mood-grid">
+            <button class="mood-btn">
+              <span>😌</span>
+              <strong>Calmo</strong>
+            </button>
+            <button class="mood-btn">
+              <span>😣</span>
+              <strong>Sobrecarregado</strong>
+            </button>
+            <button class="mood-btn">
+              <span>😔</span>
+              <strong>Cansado</strong>
+            </button>
+            <button class="mood-btn">
+              <span>😶‍🌫️</span>
+              <strong>No automático</strong>
+            </button>
+          </div>
+
+          <div class="card-footer">
+            <div>
+              <div>Estresse de hoje</div>
+              <div>nível moderado</div>
+            </div>
+            <div class="progress-bar" aria-hidden="true">
+              <div class="progress-inner"></div>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <section class="sections" aria-label="Recursos principais do Calmaria.me">
+        <article class="section-card">
+          <div class="section-title">🌬️ Exercícios rápidos</div>
+          <div class="section-tag">1 a 3 minutos para desacelerar</div>
+          <ul class="section-list">
+            <li>Respiração guiada para momentos de crise.</li>
+            <li>Alongamentos sutis para aliviar tensão do corpo.</li>
+            <li>Visualizações leves para “trocar de cenário” mental.</li>
+          </ul>
+          <div class="pill-small">Perfeito para pausas no trabalho</div>
+        </article>
+
+        <article class="section-card">
+          <div class="section-title">📓 Diário emocional</div>
+          <div class="section-tag">Desabafe sem julgamentos</div>
+          <ul class="section-list">
+            <li>Escreva o que está pesando e veja o texto “evaporar”.</li>
+            <li>Solte pensamentos repetitivos com um clique.</li>
+            <li>Registre o que precisa ser lembrado com carinho.</li>
+          </ul>
+          <div class="pill-small">Seu espaço, do seu jeito</div>
+        </article>
+
+        <article class="section-card">
+          <div class="section-title">✨ Calmaria Premium</div>
+          <div class="section-tag">Cuidar de você não precisa ser caro</div>
+          <ul class="section-list">
+            <li>Trilhas guiadas de 7 dias para reduzir o estresse.</li>
+            <li>Sons, meditações e conteúdos exclusivos.</li>
+            <li>Histórico completo do seu humor e check-ins.</li>
+          </ul>
+          <div class="pill-small">Planos a partir de R$ 4,90 / mês</div>
+        </article>
+      </section>
+
+      <footer>
+        Calmaria.me não substitui acompanhamento psicológico ou médico. É um espaço de apoio, cuidado e pausa.
+      </footer>
+    </main>
+  </div>
+</body>
+</html>
