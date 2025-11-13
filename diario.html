@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Diário emocional — Calmaria.me</title>
+  <link rel="stylesheet" href="assets/style.css" />
+  <script defer src="assets/app.js"></script>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <a class="logo" href="index.html">
+        <div class="logo-mark">C</div>
+        <div>
+          <div class="logo-txt-top">Calmaria.me</div>
+          <div class="logo-txt-bottom">refúgio emocional diário</div>
+        </div>
+      </a>
+      <nav>
+        <a href="calma.html">Preciso de calma</a>
+        <a class="active-link" href="diario.html">Diário</a>
+        <a href="teste.html">Teste</a>
+        <a href="premium.html">Premium</a>
+      </nav>
+    </header>
+
+    <main>
+      <div class="centered">
+        <div class="kicker">Desabafe sem julgamentos</div>
+        <h1 class="title">Escreva. Depois vamos deixar ir.</h1>
+        <p class="subtitle">O que está pesando agora?</p>
+        <textarea id="diaryBox" class="textbox" placeholder="Escreva aqui..." aria-label="Campo do diário"></textarea>
+        <div class="actions" style="justify-content:center;margin-top:12px">
+          <button class="btn btn-primary" onclick="evaporateDiary()">Soltar e deixar ir</button>
+          <a class="btn" href="calma.html">Preciso de calma</a>
+        </div>
+        <div id="diaryHolder" style="margin-top:16px"></div>
+      </div>
+    </main>
+
+    <footer>
+      Seu texto não é enviado a servidor. Fica apenas aqui com você, neste momento.
+    </footer>
+  </div>
+</body>
+</html>
