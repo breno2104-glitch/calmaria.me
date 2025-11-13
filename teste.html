@@ -1,103 +1,91 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Teste diário de estresse — Calmaria.me</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css"/>
+
+  <meta name="title" content="Calmaria.me — refúgio emocional diário"/>
+  <meta name="description" content="Respire, organize as emoções e alivie o estresse com práticas gentis e acessíveis."/>
+  <meta name="theme-color" content="#F4EDE3"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:title" content="Calmaria.me — refúgio emocional diário"/>
+  <meta property="og:description" content="Respire, organize as emoções e alivie o estresse com práticas gentis e acessíveis."/>
+  <meta property="og:image" content="icon-512.png"/>
+  <meta property="og:url" content="index.html"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Calmaria.me — refúgio emocional diário"/>
+  <meta name="twitter:description" content="Respire, organize as emoções e alivie o estresse com práticas gentis e acessíveis."/>
+  <meta name="twitter:image" content="icon-512.png"/>
+  <link rel="icon" href="favicon.png"/>
+  <link rel="apple-touch-icon" href="icon-512.png"/>
+  <link rel="manifest" href="site.webmanifest"/>
+
   <script defer src="app.js"></script>
 </head>
 <body>
   <div class="page">
     <header>
-      <a class="logo" href="index.html">
-        <div class="logo-mark">C</div>
-        <div>
-          <div class="logo-txt-top">Calmaria.me</div>
-          <div class="logo-txt-bottom">refúgio emocional diário</div>
-        </div>
-      </a>
+      <a class="logo" href="index.html"><img src="logo.svg" alt="Calmaria.me" width="140" height="36"/></a>
+
       <nav>
-        <a href="calma.html">Preciso de calma</a>
-        <a href="diario.html">Diário</a>
-        <a class="active-link" href="teste.html">Teste</a>
-        <a href="premium.html">Premium</a>
+        <a href="calma.html" >Preciso de calma</a>
+        <a href="diario.html" >Diário</a>
+        <a href="teste.html" class="active-link">Teste</a>
+        <a href="premium.html" >Premium</a>
       </nav>
     </header>
 
-    <main>
-      <div class="centered">
-        <div class="kicker">Autoavaliação rápida</div>
-        <h1 class="title">Como está seu estresse hoje?</h1>
-        <p class="subtitle">Responda de 1 a 5 (1 = nada, 5 = muito).</p>
+<main>
+  <div class="centered">
+    <div class="kicker">Autoavaliação rápida</div>
+    <h1 class="title">Como está seu estresse hoje?</h1>
+    <p class="subtitle">Responda de 1 a 5 (1 = nada, 5 = muito).</p>
+    <div class="q"><div>1) Senti tensão no corpo hoje.</div><div>
+      <label><input type="radio" name="q1" value="1">1</label>
+      <label><input type="radio" name="q1" value="2">2</label>
+      <label><input type="radio" name="q1" value="3">3</label>
+      <label><input type="radio" name="q1" value="4">4</label>
+      <label><input type="radio" name="q1" value="5">5</label>
+    </div></div>
+    <div class="q"><div>2) Minha mente ficou acelerada.</div><div>
+      <label><input type="radio" name="q2" value="1">1</label>
+      <label><input type="radio" name="q2" value="2">2</label>
+      <label><input type="radio" name="q2" value="3">3</label>
+      <label><input type="radio" name="q2" value="4">4</label>
+      <label><input type="radio" name="q2" value="5">5</label>
+    </div></div>
+    <div class="q"><div>3) Tive dificuldade para relaxar.</div><div>
+      <label><input type="radio" name="q3" value="1">1</label>
+      <label><input type="radio" name="q3" value="2">2</label>
+      <label><input type="radio" name="q3" value="3">3</label>
+      <label><input type="radio" name="q3" value="4">4</label>
+      <label><input type="radio" name="q3" value="5">5</label>
+    </div></div>
+    <div class="q"><div>4) Fiquei irritado(a) ou impaciente.</div><div>
+      <label><input type="radio" name="q4" value="1">1</label>
+      <label><input type="radio" name="q4" value="2">2</label>
+      <label><input type="radio" name="q4" value="3">3</label>
+      <label><input type="radio" name="q4" value="4">4</label>
+      <label><input type="radio" name="q4" value="5">5</label>
+    </div></div>
+    <div class="q"><div>5) O estresse afetou meu foco hoje.</div><div>
+      <label><input type="radio" name="q5" value="1">1</label>
+      <label><input type="radio" name="q5" value="2">2</label>
+      <label><input type="radio" name="q5" value="3">3</label>
+      <label><input type="radio" name="q5" value="4">4</label>
+      <label><input type="radio" name="q5" value="5">5</label>
+    </div></div>
+    <div class="actions" style="justify-content:center;margin-top:12px">
+      <button class="btn btn-primary" onclick="calcStress()">Ver meu resultado</button>
+      <a class="btn" href="calma.html">Preciso de calma</a>
+    </div>
+    <div id="testResult" class="result" role="status" aria-live="polite"></div>
+  </div>
+</main>
 
-        <div class="q">
-          <div>1) Senti tensão no corpo hoje.</div>
-          <div>
-            <label><input type="radio" name="q1" value="1">1</label>
-            <label><input type="radio" name="q1" value="2">2</label>
-            <label><input type="radio" name="q1" value="3">3</label>
-            <label><input type="radio" name="q1" value="4">4</label>
-            <label><input type="radio" name="q1" value="5">5</label>
-          </div>
-        </div>
-
-        <div class="q">
-          <div>2) Minha mente ficou acelerada.</div>
-          <div>
-            <label><input type="radio" name="q2" value="1">1</label>
-            <label><input type="radio" name="q2" value="2">2</label>
-            <label><input type="radio" name="q2" value="3">3</label>
-            <label><input type="radio" name="q2" value="4">4</label>
-            <label><input type="radio" name="q2" value="5">5</label>
-          </div>
-        </div>
-
-        <div class="q">
-          <div>3) Tive dificuldade para relaxar.</div>
-          <div>
-            <label><input type="radio" name="q3" value="1">1</label>
-            <label><input type="radio" name="q3" value="2">2</label>
-            <label><input type="radio" name="q3" value="3">3</label>
-            <label><input type="radio" name="q3" value="4">4</label>
-            <label><input type="radio" name="q3" value="5">5</label>
-          </div>
-        </div>
-
-        <div class="q">
-          <div>4) Fiquei irritado(a) ou impaciente.</div>
-          <div>
-            <label><input type="radio" name="q4" value="1">1</label>
-            <label><input type="radio" name="q4" value="2">2</label>
-            <label><input type="radio" name="q4" value="3">3</label>
-            <label><input type="radio" name="q4" value="4">4</label>
-            <label><input type="radio" name="q4" value="5">5</label>
-          </div>
-        </div>
-
-        <div class="q">
-          <div>5) O estresse afetou meu foco hoje.</div>
-          <div>
-            <label><input type="radio" name="q5" value="1">1</label>
-            <label><input type="radio" name="q5" value="2">2</label>
-            <label><input type="radio" name="q5" value="3">3</label>
-            <label><input type="radio" name="q5" value="4">4</label>
-            <label><input type="radio" name="q5" value="5">5</label>
-          </div>
-        </div>
-
-        <div class="actions" style="justify-content:center;margin-top:12px">
-          <button class="btn btn-primary" onclick="calcStress()">Ver meu resultado</button>
-          <a class="btn" href="calma.html">Preciso de calma</a>
-        </div>
-
-        <div id="testResult" class="result" role="status" aria-live="polite"></div>
-      </div>
-    </main>
-
-    <footer>
-      Este teste é indicativo e não substitui avaliação profissional.
-    </footer>
+    <footer>Calmaria.me não substitui acompanhamento psicológico ou médico. É um espaço de apoio, cuidado e pausa.</footer>
   </div>
 </body>
 </html>

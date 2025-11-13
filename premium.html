@@ -1,76 +1,64 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Calmaria Premium — Calmaria.me</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css"/>
+
+  <meta name="title" content="Calmaria.me — refúgio emocional diário"/>
+  <meta name="description" content="Respire, organize as emoções e alivie o estresse com práticas gentis e acessíveis."/>
+  <meta name="theme-color" content="#F4EDE3"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:title" content="Calmaria.me — refúgio emocional diário"/>
+  <meta property="og:description" content="Respire, organize as emoções e alivie o estresse com práticas gentis e acessíveis."/>
+  <meta property="og:image" content="icon-512.png"/>
+  <meta property="og:url" content="index.html"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Calmaria.me — refúgio emocional diário"/>
+  <meta name="twitter:description" content="Respire, organize as emoções e alivie o estresse com práticas gentis e acessíveis."/>
+  <meta name="twitter:image" content="icon-512.png"/>
+  <link rel="icon" href="favicon.png"/>
+  <link rel="apple-touch-icon" href="icon-512.png"/>
+  <link rel="manifest" href="site.webmanifest"/>
+
 </head>
 <body>
   <div class="page">
     <header>
-      <a class="logo" href="index.html">
-        <div class="logo-mark">C</div>
-        <div>
-          <div class="logo-txt-top">Calmaria.me</div>
-          <div class="logo-txt-bottom">refúgio emocional diário</div>
-        </div>
-      </a>
+      <a class="logo" href="index.html"><img src="logo.svg" alt="Calmaria.me" width="140" height="36"/></a>
+
       <nav>
-        <a href="calma.html">Preciso de calma</a>
-        <a href="diario.html">Diário</a>
-        <a href="teste.html">Teste</a>
-        <a class="active-link" href="premium.html">Premium</a>
+        <a href="calma.html" >Preciso de calma</a>
+        <a href="diario.html" >Diário</a>
+        <a href="teste.html" >Teste</a>
+        <a href="premium.html" class="active-link">Premium</a>
       </nav>
     </header>
 
-    <main>
-      <div class="centered">
-        <div class="kicker">Mais cuidado, pequeno preço</div>
-        <h1 class="title">Calmaria Premium</h1>
-        <p class="subtitle">Conteúdos exclusivos, trilhas guiadas e histórico completo do seu cuidado emocional.</p>
-      </div>
+<main>
+  <div class="centered">
+    <div class="kicker">Mais cuidado, pequeno preço</div>
+    <h1 class="title">Calmaria Premium</h1>
+    <p class="subtitle">Conteúdos exclusivos, trilhas guiadas e histórico completo do seu cuidado emocional.</p>
+  </div>
+  <section class="pricing">
+    <article class="plan"><h3>Essencial</h3><div class="price">R$ 4,90 <small class="muted">/ mês</small></div>
+      <ul><li>Exercícios extras</li><li>Sons ambientes</li><li>Modo noturno</li></ul>
+      <div class="actions"><a class="btn btn-primary" href="#">Começar</a></div>
+    </article>
+    <article class="plan"><h3>Completo <span class="badge">Mais popular</span></h3><div class="price">R$ 12,90 <small class="muted">/ mês</small></div>
+      <ul><li>Tudo do Essencial</li><li>Trilhas de 7 dias</li><li>Histórico do humor</li><li>Frases terapêuticas personalizadas</li></ul>
+      <div class="actions"><a class="btn btn-primary" href="#">Assinar</a></div>
+    </article>
+    <article class="plan"><h3>Vitalício</h3><div class="price">R$ 19,90 <small class="muted">uma vez</small></div>
+      <ul><li>Acesso para sempre</li><li>Atualizações</li><li>Suporte por e-mail</li></ul>
+      <div class="actions"><a class="btn btn-primary" href="#">Garantir agora</a></div>
+    </article>
+  </section>
+</main>
 
-      <section class="pricing">
-        <article class="plan">
-          <h3>Essencial</h3>
-          <div class="price">R$ 4,90 <small class="muted">/ mês</small></div>
-          <ul>
-            <li>Exercícios extras</li>
-            <li>Sons ambientes</li>
-            <li>Modo noturno</li>
-          </ul>
-          <div class="actions"><a class="btn btn-primary" href="#">Começar</a></div>
-        </article>
-
-        <article class="plan">
-          <h3>Completo <span class="badge">Mais popular</span></h3>
-          <div class="price">R$ 12,90 <small class="muted">/ mês</small></div>
-          <ul>
-            <li>Tudo do Essencial</li>
-            <li>Trilhas de 7 dias</li>
-            <li>Histórico do humor</li>
-            <li>Frases terapêuticas personalizadas</li>
-          </ul>
-          <div class="actions"><a class="btn btn-primary" href="#">Assinar</a></div>
-        </article>
-
-        <article class="plan">
-          <h3>Vitalício</h3>
-          <div class="price">R$ 19,90 <small class="muted">uma vez</small></div>
-          <ul>
-            <li>Acesso para sempre</li>
-            <li>Atualizações</li>
-            <li>Suporte por e-mail</li>
-          </ul>
-          <div class="actions"><a class="btn btn-primary" href="#">Garantir agora</a></div>
-        </article>
-      </section>
-
-      <footer>
-        Assinaturas são simuladas neste protótipo (sem cobrança real).
-      </footer>
-    </main>
+    <footer>Calmaria.me não substitui acompanhamento psicológico ou médico. É um espaço de apoio, cuidado e pausa.</footer>
   </div>
 </body>
 </html>

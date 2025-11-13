@@ -1,0 +1,15 @@
+{
+  "name": "Calmaria.me",
+  "short_name": "Calmaria",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#F4EDE3",
+  "theme_color": "#F4EDE3",
+  "icons": [
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
